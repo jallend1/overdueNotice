@@ -46,26 +46,19 @@ if(overdueText === null) {
 }
 else{
     letterContent = `
-    King County Library System
-    Interlibrary Loan
-    960 Newport Way NW * Issaquah, WA 98027 * 425.369.3490 
-    
-    Date: ${todaysDate}
-    
-    Dear Patron,
-    
-    ${overdueText}
-    
-    Unfortunately, we are not able to issue renewals on interlibrary loan books. If you need more time, you are able to submit a new request once your account is cleared of overdue interlibrary loan titles. This lets us get a copy from a different system, and honor the agreements we made with the libraries that share their collections with us. It also helps to avoid any non-refundable processing fees or replacement costs.
-    
-    Please do not hesitate to reach out to me if you have any questions. And if you have returned this book since the date above? Please accept our sincerest thanks!
-    
-    Thank you,
-    Interlibrary Loan Staff
-    King County Library System
-    Interlibrary Loan
-    425-369-3490
-    illdept@kcls.org`;
+King County Library System
+Interlibrary Loan
+960 Newport Way NW * Issaquah, WA 98027 * 425.369.3490 
+
+Date: ${todaysDate}
+
+Dear Patron,
+
+${overdueText}
+
+Unfortunately, we are not able to issue renewals on interlibrary loan books. If you need more time, you are able to submit a new request once your account is cleared of overdue interlibrary loan titles. This lets us get a copy from a different system, and honor the agreements we made with the libraries that share their collections with us. It also helps to avoid any non-refundable processing fees or replacement costs.
+
+Please do not hesitate to reach out to me if you have any questions. And if you have returned this book since the date above? Please accept our sincerest thanks!`;
     console.log(letterContent);
     navigator.clipboard.writeText(letterContent);
 }
