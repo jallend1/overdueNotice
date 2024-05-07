@@ -67,5 +67,5 @@ else{
     425-369-3490
     illdept@kcls.org`;
     console.log(letterContent);
-    copy(letterContent);
+    navigator.clipboard.writeText(letterContent);
 }
