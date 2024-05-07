@@ -1,6 +1,11 @@
 /* Description: Scrapes the page for any overdue interlibrary loan titles and
 copies an overdue notice letter containing the relevant info to the clipboard. */
 
+// TODO: Add logic to handle LOST titles, whose divs do not have an alert class
+// TODO: Extract patron contact information from page and add to letter
+// TODO: Extract patron email address from page
+// TODO: Store content as object to allow pasting into new email form with subject and recipient filled in
+
 window.focus();
 
 let todaysDate = new Date().toLocaleDateString();
@@ -9,7 +14,6 @@ let overdueText = '';
 let letterCOntent = '';
 
 // Extracts ILL titles from page that are overdue (.less-intense-alert class applied to overdue titles)
-// TODO: Add logic to handle LOST titles, whose divs do not have an alert class
 const lessIntenseAlertDivs = document.querySelectorAll('.less-intense-alert');
 lessIntenseAlertDivs.forEach((div) => {
     const anchorTags = div.querySelectorAll('a');
@@ -63,4 +67,3 @@ Unfortunately, we are not able to issue renewals on interlibrary loan books. If 
 Please do not hesitate to reach out to me if you have any questions. And if you have returned this book since the date above? Please accept our sincerest thanks!`;
 
 navigator.clipboard.writeText(letterContent);
-
